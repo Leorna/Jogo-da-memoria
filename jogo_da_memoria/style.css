@@ -1,0 +1,128 @@
+/*reset de todos os itens*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;/*lida como padding and border serao adicionados a um elemento*/
+}
+
+body {
+    min-height: 100vh; 
+    min-width: 100vw;
+    /*vh = viewport height, area visibel da pagina
+    body tera 100% do espaço disponivel*/
+
+    background: radial-gradient(darkgray, gray, black, #B6C3DC);
+}
+
+#titulo {
+    text-align: center;
+    font-family: 'Dancing Script', arial;
+    color: #B6C3DC;
+    font-size: 500%;
+}
+
+.jogo-info {
+    text-align: right;
+    margin-right: 50px;
+    font-size: 200%;
+    font-family: 'Kaushan Script', serif;
+    color: white;
+}
+
+
+/*classe da div principal*/
+.jogo-content {
+    width: 500px;
+    height: 500px;
+    margin: auto; /*centraliza horizontalmente*/
+    display: flex; /*flex deixa em fileiras */
+    flex-wrap: wrap; /*deixa um conteudo em cima do outro*/
+    perspective: 800px; /*tamanho da perspectiva da girada*/
+}
+
+.carta {
+    width: calc(20% - 10px); /*subtrai o valor da margin de height e width*/
+    height: calc(20% - 10px);
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    position: relative; /*faz com que .frente, .tras se posicionem relativo a .carta*/
+    transform: scale(1); /*valor inicial para poder transformar quando active*/
+    transform-style: preserve-3d; /*sem isso o backface aparece, e preserva o efeito 3d*/
+    transition: transform .5s;/*gira durante 5segundos*/
+}
+
+/*quando o mouse passa em cima*/
+.carta:hover {
+    transform: scale(1.1); /*transforma a escala das divs com classe .carta*/
+    transition: transform .2s; /*dura dois segundos a transicao da transformacao*/
+}
+
+/*estao no mesmo elemento, quando class=".carta .girar"*/
+.carta.visivel {
+    transform: rotateX(180deg) scale(1.2); /*roda a imagem em 180 graus no eixo x*/
+}
+
+.texto-sobreposto {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    color: darkgray;
+    font-family: 'Dancing Script', arial;
+}
+
+.texto-sobreposto-restart {
+    font-size: 30px;
+}
+
+.texto-sobreposto.visivel {
+    display: flex;
+    flex-direction: column;
+    animation: overlay-grow 2.5s forwards;
+}
+
+/*adiciona animacao*/
+@keyframes overlay-grow {
+    /*começo*/
+    from {
+        background-color: rgba(0, 0, 0, 0); /*fundo totalmente tranparente*/
+        font-size: 0; 
+    }
+    /*fim*/
+    to {
+        background-color: rgba(0, 0, 0, .8);
+        font-size: 100px; 
+    }
+}
+
+.frente, .tras {
+    width: 100%;
+    height: 100%;
+    border: 3px groove #B6C3DC;
+    position: absolute; /*posiciona relativamente a algum outro elemento, neste caso relativo ao .carta*/
+    border-radius: 25px;
+    background: grey;
+    backface-visibility: hidden; /*esconde a backface das cartas, backface é a mesma imagem so que espelhada*/
+}
+
+.frente {
+    transform: rotateX(180deg); /*faz aparecer a imagem que estava 'embaixo'*/
+}
+
+/*redimensiona a tela*/
+@media (max-width: 600px) {
+    .jogo-content {
+        grid-template-columns: repeat(2, auto);
+    }
+
+    .jogo-info {
+        flex-direction: column;
+        align-items: center; 
+    }
+}

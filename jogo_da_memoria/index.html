@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+        <script type="text/javascript" src="scripts/configs.js"></script>
+        <title>Jogo Da Memória</title>
+    </head>
+
+    <body>
+        <h1 id="titulo">Jogo Da Memória</h1>
+
+        <div class="texto-sobreposto visivel">
+            Clique para iniciar
+        </div>
+
+        <div id="texto-game-over" class="texto-sobreposto">
+             VOCÊ PERDEU!
+            <span class="texto-sobreposto-restart">
+                Clique para reiniciar
+            </span>
+        </div>
+
+        <div id="texto-game-won" class="texto-sobreposto">
+            VOCÊ GANHOU!
+            <span class="texto-sobreposto-restart">
+                Clique para reiniciar
+            </span>
+        </div>
+
+        <div class="jogo-info">
+            Pontuação: <span id="pontos">?</span>
+        </div>
+
+        <div class="jogo-info">
+            Tempo: <span id="tempo">50</span> s
+        </div>
+
+        <div class="jogo-content">
+            <div class="carta" data-iguais="cpp">
+                <img class="frente" src="imagens/cpp.png"/>
+                <img class="tras" src="imagens/b.png">
+            </div>
+
+            <div class="carta" data-iguais="cpp">
+                <img class="frente" src="imagens/cpp.png"/>
+                <img class="tras" src="imagens/b.png">
+            </div>
+
+            <div class="carta" data-iguais="csharp">
+                <img class="frente" src="imagens/csharp.png"/>
+                <img class="tras" src="imagens/b.png">
+            </div>
+
+            <div class="carta" data-iguais="csharp">
+                <img class="frente" src="imagens/csharp.png"/>
+                <img class="tras" src="imagens/b.png">
+            </div>
+
+            <div class="carta" data-iguais="css">
+                <img class="frente" src="imagens/css.png"/>
+                <img class="tras" src="imagens/b.png">
+            </div>
+
+            <div class="carta" data-iguais="css">
+                <img class="frente" src="imagens/css.png"/>
+                <img class="tras" src="imagens/b.png">
+            </div>
+
+            <div class="carta" data-iguais="github">
+                <img class="frente" src="imagens/github.png"/>
+                <img class="tras" src="imagens/b.png">
+            </div>
+
+            <div class="carta" data-iguais="github">
+                <img class="frente" src="imagens/github.png"/>
+                <img class="tras" src="imagens/b.png">
+            </div>
+
+            <div class="carta" data-iguais="golang">
+                <img class="frente" src="imagens/golang.png"/>
+                <img class="tras" src="imagens/b.png">
+            </div>
+
+            <div class="carta" data-iguais="golang">
+                <img class="frente" src="imagens/golang.png"/>
+                <img class="tras" src="imagens/b.png">
+            </div>
+
+            <div class="carta" data-iguais="html">
+                <img class="frente" src="imagens/html.png"/>
+                <img class="tras" src="imagens/b.png">
+            </div>
+    
+            <div class="carta" data-iguais="html">
+                <img class="frente" src="imagens/html.png"/>
+                <img class="tras" src="imagens/b.png">
+            </div>
+    
+            <div class="carta" data-iguais="java">
+                <img class="frente" src="imagens/java.png"/>
+                <img class="tras" src="imagens/b.png">
+            </div>
+    
+            <div class="carta" data-iguais="java">
+                <img class="frente" src="imagens/java.png"/>
+                <img class="tras" src="imagens/b.png">
+            </div>
+    
+            <div class="carta" data-iguais="jscript">
+                <img class="frente" src="imagens/jscript.png"/>
+                <img class="tras" src="imagens/b.png">
+            </div>
+            
+            <div class="carta" data-iguais="jscript">
+                <img class="frente" src="imagens/jscript.png"/>
+                <img class="tras" src="imagens/b.png">
+            </div>
+            <div class="carta" data-iguais="php">
+                <img class="frente" src="imagens/php.png"/>
+                <img class="tras" src="imagens/b.png">
+            </div>
+
+            <div class="carta" data-iguais="php">
+                <img class="frente" src="imagens/php.png"/>
+                <img class="tras" src="imagens/b.png">
+            </div>
+    
+            <div class="carta" data-iguais="python">
+                <img class="frente" src="imagens/python.png"/>
+                <img class="tras" src="imagens/b.png">
+            </div>
+    
+            <div class="carta" data-iguais="python">
+                <img class="frente" src="imagens/python.png"/>
+                <img class="tras" src="imagens/b.png">
+            </div>
+
+        </div>
+        <script type="text/javascript" src="scripts/jogabilidade.js"></script>
+    </body>
+
+</html>
