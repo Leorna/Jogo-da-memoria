@@ -37,6 +37,7 @@ function restartJogo() {
 
     jogo = new ControladorDeJogo(pontos, totalPontos, restartJogo, p)
     
+    embaralhar()
     main()
 }
 
@@ -122,7 +123,7 @@ function resetJogoContent() {
 
 // uma immediately invoked function
 //embaralha as cartas, mudando o valor default de order 
-(function embaralhar() {
+function embaralhar() {
     const rand = Math.random
     
     //para cada item da lista de cartas, muda o style.order para um numero aleatorio de 0 a 19
@@ -131,7 +132,7 @@ function resetJogoContent() {
         carta.style.order = posicao
     })
     console.log('embaralhar()')
-})()
+}
 
 
 //main, para cada carta dentro da lista de cartas
@@ -141,4 +142,5 @@ function main() {
     })
 }
 
+embaralhar()
 main()
