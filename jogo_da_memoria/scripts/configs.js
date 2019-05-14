@@ -86,7 +86,7 @@ class ControladorDeJogo {
 
     addPontos() {
         this.$pontos += 1
-        this.$p.innerHTML = pontos 
+        this.$p.innerHTML = this.$pontos 
     }
 
     conferirVitoria() {
